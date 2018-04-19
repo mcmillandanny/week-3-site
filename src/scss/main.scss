@@ -23,17 +23,18 @@ $accent-color: #536889;
 $tablet-breakpoint: 640px;
 $desktop-breakpoint: 960px;
 
-@mixin bp-large {
+@mixin desktop-bp {
 	@media only screen and (min-width: $desktop-breakpoint) {
 		@content; // This lets you put stuff inside of the mixin
 	}
 }
 
-@mixin bp-small {
+@mixin tablet-bp {
 	@media only screen and (min-width: $tablet-breakpoint) {
 		@content;
 	}
 }
+
 
 /* 1. Main Layout ================================= */
 
@@ -79,7 +80,7 @@ header {
 	background-position: center center;
 	background-size: cover;
 
-	@include bp-small {
+	@include tablet-bp {
 		height: 400px;
 	}
 }
@@ -103,7 +104,7 @@ footer {
 .gallery-title {
 	padding: 5px;
 
-	@include bp-small {
+	@include tablet-bp {
 		padding: 20px 40px;
 	}
 
@@ -116,7 +117,7 @@ footer {
 .gallery-description {
 	padding: 5px 5px 15px 5px;
 
-	@include bp-small {
+	@include tablet-bp {
 		padding: 5px 40px 20px 40px;
 	}
 }
@@ -134,7 +135,7 @@ footer {
 		align-items: center;
 		overflow: hidden;
 
-		@include bp-small {
+		@include tablet-bp {
 			flex-basis: 50%;
 
 			&:nth-child(2n - 1) {
@@ -203,10 +204,19 @@ footer {
 	padding: 5px;
 	margin-bottom: 5px;
 
+	.likeBtn {
+		height: 30px;
+		width: 30px;
+		margin-right: 20px;
+	}
+
 	img {
 		width: 60px;
 		height: 60px;
 		border-radius: 60px;
+	}
+	.like {
+		margin-right: 20px;
 	}
 }
 
@@ -219,3 +229,4 @@ footer {
 		margin-right: 3px;
 	}
 }
+
